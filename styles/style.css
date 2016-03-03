@@ -1,96 +1,93 @@
 .cbp-spmenu {
-	background: #47a3da;
-	position: fixed;
+    background: #47a3da;
+    position: fixed;
 }
 
 .cbp-spmenu h3 {
-	color: #afdefa;
-	font-size: 1.9em;
-	padding: 5px 0 0 5px;
-	margin: 0;
-	font-weight: 300;
-	background: #0d77b6;
+    color: #afdefa;
+    font-size: 1.9em;
+    padding: 5px 0 0 5px;
+    margin: 0;
+    font-weight: 300;
+    background: #0d77b6;
 }
 
 .cbp-spmenu a {
-	display: block;
-	color: #fff;
-	font-size: 1.1em;
-	font-weight: 300;
+    display: block;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 300;
 }
 
 .cbp-spmenu a:hover {
-	background: #258ecd;
+    background: #258ecd;
 }
 
 .cbp-spmenu a:active {
-	background: #afdefa;
-	color: #47a3da;
+    background: #afdefa;
+    color: #47a3da;
 }
 
 .cbp-spmenu-horizontal {
-	width: 100%;
-	height: 50px;
-	left: 0;
-	z-index: 9999999;
-	overflow: hidden;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    z-index: 150000011;
+    overflow: hidden;
 }
 
 .cbp-spmenu-horizontal h3 {
-	height: 100%;
-	width: 20%;
-	float: left;
+    height: 100%;
+    width: 20%;
+    margin-right: 6px;
+    float: left;
 }
 
 .cbp-spmenu-horizontal a {
-	float: left;
-	width: 20%;
-	padding: 0.8em;
-	border-left: 1px solid #258ecd;
+    float: left;
+    width: 20%;
+    padding: 0.8em;
+    border-left: 1px solid #258ecd;
 }
 
 .cbp-spmenu-top {
-	top: -150px;
+    top: -150px;
 }
 
 .cbp-spmenu-top.cbp-spmenu-open {
-	top: 0px;
+    top: 0px;
 }
 
 .cbp-spmenu {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#showTop{
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-	z-index: 9999999;
+#showTop {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 150000011;
 }
 
-@media screen and (max-width: 55.1875em){
-
-	.cbp-spmenu-horizontal {
-		font-size: 75%;
-	}
-
-	.cbp-spmenu-top {
-		top: -110px;
-	}
-
+@media screen and (max-width: 55.1875em) {
+    .cbp-spmenu-horizontal {
+        font-size: .6em;
+    }
+    .cbp-spmenu-top {
+        top: -110px;
+    }
 }
 
-
-#showTop{
-	position: fixed;
-	height: 50px;
-	width: 50px;
-	left: 0;
-	top: 0;
-	padding: 0;
-	background: #47a3da;
+#showTop {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    left: 0;
+    top: 0;
+    padding: 0;
+    background: #47a3da;
 }
 
 #nav-icon3 {
@@ -169,45 +166,48 @@
 
 
 /*Drop down*/
-.select_style 
-{
-	background: #FFF;
-	overflow: hidden;
-	display: inline-block;
-	color: #525252;
-	font-weight: 300;
-	-webkit-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
-	-moz-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
-	border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
-	-webkit-box-shadow: 0 0 5px rgba(123, 123, 123, 0.2);
-	-moz-box-shadow: 0 0 5px rgba(123,123,123,.2);
-	box-shadow: 0 0 5px rgba(123, 123, 123, 0.2);
-	border: solid 1px #DADADA;
-	font-family: "helvetica neue",arial;
-	position: relative;
-	cursor: pointer;
-	padding-right:20px;
 
+.select_style {
+    background: #FFF;
+    overflow: hidden;
+    display: inline-block;
+    color: #525252;
+    font-weight: 300;
+    -webkit-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+    -moz-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+    border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+    -webkit-box-shadow: 0 0 5px rgba(123, 123, 123, 0.2);
+    -moz-box-shadow: 0 0 5px rgba(123, 123, 123, .2);
+    box-shadow: 0 0 5px rgba(123, 123, 123, 0.2);
+    border: solid 1px #DADADA;
+    font-family: "helvetica neue", arial;
+    position: relative;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 2px;
 }
-.select_style span
-{
-	position: absolute;
-	right: 10px;
-	width: 8px;
-	height: 8px;
-	background: url(http://projects.authenticstyle.co.uk/niceselect/arrow.png) no-repeat;
-	top: 50%;
-	margin-top: -4px;
+
+.select_style .switcher_dropdown {}
+
+.select_style span {
+    position: absolute;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background: url(http://projects.authenticstyle.co.uk/niceselect/arrow.png) no-repeat;
+    top: 50%;
+    margin-top: -4px;
 }
-.select_style select
-{
-	-webkit-appearance: none;
-	appearance:none;
-	width:120%;
-	background:none;
-	background:transparent;
-	border:none;
-	outline:none;
-	cursor:pointer;
-	padding:7px 10px;
+
+.select_style select {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 120%;
+    background: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 10px;
+    font-size: 1.4em;
 }
