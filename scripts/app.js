@@ -46,8 +46,12 @@
     };
     "function" == typeof define && define.amd ? define(o) : "object" == typeof exports ? module.exports = o : s.classie = o;
 }(window);
+/*************
+SiteSwitcher
+**************/
 var SiteSwitcher = SiteSwitcher || {};
 (function() {
+
     var dropdownOptions = [{
         "url": "caller"
     }, {
@@ -195,7 +199,10 @@ var SiteSwitcher = SiteSwitcher || {};
             }
             target = start + target + end;
             setInnerSite({
-                "url": target
+                "url": target,
+                "metrics": {
+                    "loadTime":new Date().getTime()
+                }
             });
 
             function setUserAgent(window, userAgent) {
@@ -237,6 +244,7 @@ var SiteSwitcher = SiteSwitcher || {};
     }
 
     function setInnerSite(data) {
+        var menuTop = document.getElementById('cbp-spmenu-s3');
         data = data || {};
         data.url = data.url || "www.caller.com";
         var iframe = document.createElement("iframe");
@@ -244,22 +252,26 @@ var SiteSwitcher = SiteSwitcher || {};
         iframe.id = "innerSiteDisplay";
         iframe.src = data.url;
         iframe.onload = function(a) {
-            // console.log("SOMETHING IS HAPPENING IN IFRAME: ", a, this)
+            var loadTime = ((new Date().getTime()) - data.metrics.loadTime)/1000.0;
+            console.info("Load Time: ", loadTime," seconds")
         };
+        menuTop.style.opacity = ".5";
         var switcher = document.getElementById("switcher_site");
         while (switcher.firstChild) {
             switcher.removeChild(switcher.firstChild);
         }
         switcher.appendChild(iframe);
         setTimeout(function() {
-            menuTop = document.getElementById('cbp-spmenu-s3'),
-                showTop = document.getElementById('showTop');
-            classie.toggle(showTop, 'active');
-            classie.toggle(menuTop, 'cbp-spmenu-open');
-            classie.toggle(hamburgerAnimate, 'open');
-            var top = (showTop.className === "active") ? "50" : "0";
-            showTop.setAttribute("style", "top: " + top + "px");
-        }, 1000);
+            menuTop.style.opacity = "1";
+
+            // var menuTop = document.getElementById('cbp-spmenu-s3'),
+            //     showTop = document.getElementById('showTop');
+            // classie.toggle(showTop, 'active');
+            // classie.toggle(menuTop, 'cbp-spmenu-open');
+            // classie.toggle(hamburgerAnimate, 'open');
+            // var top = (showTop.className === "active") ? "50" : "0";
+            // showTop.setAttribute("style", "top: " + top + "px");
+        }, 2000);
     }
     //addCSS();
     SiteSwitcher.buildMenu();
